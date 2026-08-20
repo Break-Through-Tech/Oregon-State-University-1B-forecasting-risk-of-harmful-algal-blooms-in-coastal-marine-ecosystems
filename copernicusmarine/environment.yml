@@ -1,0 +1,53 @@
+name: cmems
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+
+  # Copernicus Marine Service toolbox (CLI + python API)
+  - copernicusmarine>=2.0
+
+  # Core array / dataframe
+  - numpy
+  - pandas
+  - scipy
+
+  # Gridded data: copernicusmarine returns xarray Datasets backed by zarr/netcdf
+  - xarray
+  - dask
+  - netcdf4
+  - h5netcdf
+  - zarr
+  - cftime
+  - bottleneck            # speeds up xarray rolling/reductions
+
+  # Geospatial
+  - rasterio
+  - rioxarray
+  - geopandas
+  - shapely
+  - pyproj
+  - cartopy
+  - regionmask
+
+  # Plotting
+  - matplotlib
+  - cmocean               # oceanography colormaps
+  - seaborn
+
+  # Interactive work
+  - jupyterlab
+  - ipykernel
+  - ipywidgets
+  - tqdm
+
+  # Config / secrets for API credentials
+  - python-dotenv
+
+  # --- Optional: Copernicus Data Space Ecosystem (Sentinel imagery) ---
+  # Uncomment if you also need CDSE STAC / S3 access rather than Marine data.
+  # - pystac-client
+  # - odc-stac
+  # - boto3               # CDSE serves products over S3-compatible storage
+  # - requests
+  # - sentinelhub
